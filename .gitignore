@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Made on each laptop when the game runs
+pc/sounds/announcer/ann_*.wav
+pc/disconnects.csv
+pc/*.json
+pc/*.csv
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
