@@ -13,6 +13,7 @@ Each run prints a ready-made row for this table and saves a CSV in `pc/bench_res
 | | BDS-1 | gestures (`python bench.py gestures BDS-1 --who <name>`) | 30 casts | | |
 | | BDS-1 | battery (`python bench.py battery BDS-1`, full → empty) | | | |
 
+
 Targets: one-way delay < 30 ms, 0–2 % lost; gestures ≥ 80 % for 3 different people; battery ≥ 1.5 h.
 
 ## 1. Spell recognition (spell practice mode, Serial Monitor open)
@@ -22,22 +23,31 @@ Each person does each spell 10 times. Write how many were recognised correctly.
 |---|---|---|---|---|---|---|---|
 | | | BDS-1 | | | | | |
 
+
 ## 2. Config changes
+
 | Date | File | Setting | Old → New | Why (what went wrong) | Better after? |
 |---|---|---|---|---|---|
 | | config.h | | | | |
 
+
 ## 3. Full matches with real players
+
 | Date | Players | L1 score | L2 HP end | L3 winner | Match time | Bugs / feelings |
 |---|---|---|---|---|---|---|
 | | | | | | | |
 
+
 ## 4. Drop-outs (from `pc/disconnects.csv`)
+
 | Date | Wand | Event (disconnect / restart WATCHDOG / BROWN-OUT) | Battery % | Level | What we changed |
 |---|---|---|---|---|---|
 | | | | | | |
 
+
 ## 5. Bugs
+
 | Date | What happened | How to repeat | Fixed? (commit / change) |
 |---|---|---|---|
 | | | | |
+

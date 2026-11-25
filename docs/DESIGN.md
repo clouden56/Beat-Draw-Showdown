@@ -7,6 +7,7 @@ A 2-player duel game in **3 levels** (one match ≈ 3 minutes). Each player hold
 with a TinyScreen+ stack inside. The laptop is the referee and the big screen.
 
 ### Level 1 — Cowboy (best of 3 draws, ties replayed, max 5 rounds)
+
 | Stage | Where | What happens |
 |---|---|---|
 | 1 Lobby | laptop + wands | Laptop connects to `BDS-1` and `BDS-2`, measures Bluetooth latency (10 pings). |
@@ -15,6 +16,7 @@ with a TinyScreen+ stack inside. The laptop is the referee and the big screen.
 | 4 Standoff | wands judge | Random 1.5–4.5 s. Moving more than 0.35 g from your holster pose = **FOUL (JAMMED)**. |
 | 5 DRAW! | wands time it | Laptop sends `G` and plays the DRAW sound. Wand times the flick with `micros()`. |
 | 6 Result | laptop decides | `effective = reaction_ms − bullets × 25 ms`. Lower wins. Sent back to both wands. |
+
 **Cowboy tutorial (v5.4, before Level 1, no timer — `CTUT` state):** (1) ARROWS: each player at their own pace
 flicks U, D, L, R twice each (wand mode `O1` reports every flick as `d<dir>`; card = big arrow + animated flick
 demo + tip + progress, "That was LEFT - flick UP"); (2) PRACTICE BEAT: both play one slow 70 BPM `U-D-L-R-` round
@@ -169,6 +171,7 @@ Laptop **writes** to `6E400002…` (write-without-response). Wand **notifies** o
 | `b<pos>` | L3 beam position after each round (wand: bar + buzzer pitch) |
 | `Y<o><lvl>` | level result, `o` = `W`/`L`/`X`, e.g. `YW3` = you are champion |
 
+
 | Wand → Laptop | Meaning |
 |---|---|
 | `Q` | pong |
@@ -184,6 +187,7 @@ Laptop **writes** to `6E400002…` (write-without-response). Wand **notifies** o
 | `s<n>` | L1 tutorial holster: movement in the last 100 ms, 0–20, 10 = `FOUL_THRESHOLD_G` (v5.4) |
 | `f<c>` | FIZZLE; `c` = closest spell `L`/`W`/`F`, or `s` = move too short (v5) |
 | `%<n>` | battery level 0–100 % (after `V`, then every 10 s; measured every 5 s, never during a timed moment) |
+
 
 ## 4. Timing model (why it is fair)
 * Wands judge hits and draws **locally** — Bluetooth delay never touches the stopwatch.
@@ -211,6 +215,7 @@ Axes: `SIDE_AXIS`/`UPDOWN_AXIS`/`FORWARD_AXIS` in config.h. With the Serial Moni
 prints its numbers (`SPELL_DEBUG 1`) — use these to tune.
 
 ## 7. Tuning checklist (do with real players)
+
 | Symptom | Change |
 |---|---|
 | Drum hits not detected | lower `HIT_THRESHOLD_G` (1.2 → 1.0) |
@@ -229,3 +234,4 @@ prints its numbers (`SPELL_DEBUG 1`) — use these to tune.
 | Counters impossible in time | raise `SPELL_TRAVEL_S` in game_logic.py (2.0 → 2.5) and the 2000 ms warning in the firmware `I` handler |
 | Combos too hard / easy | change `COMBO_FLASH_S` (flash time per round) or `COMBO_WAIT_S` in game_logic.py |
 | Level 3 too long / short | change `COMBO_WIN_PUSH` / `COMBO_POINT_PUSH` or `L3_MAX_ROUNDS` in game_logic.py |
+

@@ -24,7 +24,9 @@ Keep this up to date — the assignment requires you to say where code came from
 | Watchdog setup (`wdtInit()` in `BeatDrawBlaster.ino`) | Register setup written from the SAMD21 datasheet; same approach as Adafruit's SleepyDog library (WatchdogSAMD.cpp, MIT) | Fixed 2 s timeout on GCLK2, reset cause read from `PM->RCAUSE` | Zikrul, Bryan |
 | Pixel art | `pc/pixel_art.py`: all sprites and backgrounds drawn in code by Claude, style inspired by a pixel-art standoff reference image from the team | | Jovin, Sameer |
 
+
 ## AI-assisted changes log
+
 | Date | Tool | Prompt summary | Files | Reviewed by |
 |---|---|---|---|---|
 | 2026-11-24 | Claude (Anthropic) | v5.7: Level 1 rhythm-game overhaul - 4-lane falling note highway (DDR style) with hit line, scrolling beat lines, receptors, PERFECT / GOOD / MISS popups + combo; 16-beat rounds with 8 notes; slower tempo (EASY 75 / NORMAL 90 / HARD 110, tutorial 70); generated Wild-West play-along groove; new `R<3-digit bpm><pattern>` packet, 2-digit beat in `H`; wand pages its beat strip and shows PERFECT / GOOD; stats: beat accuracy from hits, perfect hits + best combo; `--winner 1|2` filming option (bots let that player win, Level 3 always reaches the 5-spell final round; demo holds the champion screen 9 s) | firmware, `config.h`, `pc/game_logic.py`, `pc/arena_referee.py`, `pc/sounds.py`, `pc/links.py`, `pc/store.py`, `pc/menu.py`, tests, `CLAUDE.md`, `README.md` | Zikrul, Bryan |
@@ -44,3 +46,4 @@ Keep this up to date — the assignment requires you to say where code came from
 | 2026-11-05 | Claude (Anthropic) | v2.2: wrist-rebound hits after a loaded beat are ignored (they turned green beats red on the arena, so bullets looked wrong) | firmware `judgeHit`/`judgeManaHit`, `pc/arena_referee.py`, `pc/links.py` | Fadil, Darwisy |
 | 2026-11-05 | Claude (Anthropic) | v2.1 after play-testing: Level 2 spells 1.2 s → 2.0 s and mid-air collisions (fixes Fire/Water passing through each other); Level 3 arcade battle music, beam hum, crowd cheers, surge, drumroll, hype text and sparks (all sounds generated in code, no external audio) | `pc/game_logic.py`, `pc/arena_referee.py`, `pc/sounds.py`, `pc/tests/test_levels.py`, firmware `I` warning + version | Zikrul, Bryan |
 | 2026-11-05 | Claude (Anthropic) | Fix duplicate `PRINTF`/`sprintbuff` definition when `BLE_DEBUG` is true | `firmware/BeatDrawBlaster/UART.ino` | Fadil, Darwisy, Jovin, Sameer |
+

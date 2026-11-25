@@ -9,6 +9,7 @@ Each player holds a 3D-printed wand with a TinyScreen+, an accelerometer and a B
 | ![Level 1](docs/images/game_l1.png) | ![Level 2](docs/images/game_l2.png) | ![Level 3](docs/images/game_l3.png) |
 | Hit the falling arrows on the beat to load bullets, then holster, freeze and draw. Fastest draw wins. | Charge mana by pointing the wand at the sky, then cast Fire, Water or Lightning. | Memorise a spell combo and cast it back fastest to push the beam into your opponent. |
 
+
 ## How it works
 
 ```
@@ -32,6 +33,7 @@ Each player holds a 3D-printed wand with a TinyScreen+, an accelerometer and a B
 | `pc/` | The laptop game: `arena_referee.py` (main game), `menu.py`, `game_logic.py`, `links.py` (Bluetooth), `sounds.py`, `pixel_art.py`, `announcer.py`, `bench.py` (measurements), `tests/` |
 | `3d_model/` | Wand case: STL files, OpenSCAD source, blueprint, print guide |
 | `docs/` | Design notes (rules, Bluetooth protocol, timing, gesture detection), parts list, 3D-printing plan, test log, code attribution |
+
 
 ## Getting started
 
