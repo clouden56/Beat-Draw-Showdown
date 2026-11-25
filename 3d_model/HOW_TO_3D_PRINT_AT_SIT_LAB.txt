@@ -1,0 +1,22 @@
+====================================================================
+BEAT-DRAW SHOWDOWN — 3D PRINTING PACKAGE (ICT1011 TEAM PROJECT)
+====================================================================
+
+What is inside this ZIP:
+1. Drumstick_Revolver_Body.stl        -> Ready-to-slice 3D model of the Blaster Body
+2. Drumstick_Revolver_Slide_Lid.stl   -> Ready-to-slice 3D model of the Bottom Slide Cover
+3. Drumstick_Revolver_Parametric.scad -> OpenSCAD parametric source (if you want to edit sizes)
+4. 3D_Model_Blueprint_Schema.png      -> 4-View Engineering Blueprint & Assembly Diagram
+
+How to print (for beginners / lab technicians):
+1. Open UltiMaker Cura, Bambu Studio, or PrusaSlicer on the lab PC.
+2. Drag and drop BOTH `Drumstick_Revolver_Body.stl` and `Drumstick_Revolver_Slide_Lid.stl` onto the build plate.
+   (Both models are already pre-oriented with their flat face at Z = 0, in millimeters).
+3. Select these settings:
+   - Material: PLA
+   - Layer Height: 0.20 mm
+   - Walls / Perimeters: 3
+   - Infill: 20% (Gyroid or Grid)
+   - Supports: Enabled (Tree Supports or "Touching Buildplate" for the internal ceiling)
+   - Brim: Optional (Skirt is fine since the bottom is flat)
+4. Print 1 test set first to verify your TinyScreen+ stack fits snugly, then print Player 2's set!
